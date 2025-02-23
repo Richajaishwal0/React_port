@@ -16,7 +16,7 @@
     "web-vitals": "^4.2.3"
   },
   "scripts": {
-    "homepage": "https://RichaJaishwal0.github.io/RichaJaishwal_react_port",
+    "homepage": "https://RichaJaishwal0.github.io/RichaJaishwal_react_port.",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
