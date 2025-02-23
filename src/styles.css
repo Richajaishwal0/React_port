@@ -1,0 +1,347 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #eef2f3; /* Light gray background */
+    color: #333; /* Dark text */}
+ /* Global Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background for the body */
+    color: #e0e0e0; /* Light grey text color */
+}
+
+h1, h2, h3 {
+    color: #ffcc00; /* Highlight color for headings */
+}
+
+a {
+    text-decoration: none;
+    color: #ffcc00; /* Color for links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+    color: #ffd700; /* Slightly lighter on hover */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Padding for the navbar */
+    background-color: #1a1a1a; /* Dark navbar background */
+    position: fixed; /* Fixed navbar at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* On top of other elements */
+}
+
+.navbar .logo h1 {
+    font-size: 24px; /* Logo font size */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Horizontal list */
+    gap: 20px; /* Space between items */
+}
+
+.nav-links li a {
+    padding: 10px 15px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links li a:hover {
+    background-color: #ffcc00; /* Background color on hover */
+    color: #121212; /* Dark text color on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    height: 100vh; /* Full height of viewport */
+    text-align: center; /* Center text */
+     /* Background image */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px; /* Padding for hero section */
+}
+
+.hero h1 {
+    font-size: 48px; /* Large font size */
+    margin-bottom: 20px; /* Space below heading */
+    animation: fadeIn 1s ease; /* Fade-in effect */
+}
+
+.hero p {
+    font-size: 20px; /* Medium font size */
+    margin-bottom: 30px; /* Space below paragraph */
+}
+
+.btn {
+    padding: 15px 25px; /* Button padding */
+    background-color: #ffcc00; /* Button background color */
+    color: #121212; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #ffd700;
+    color:black;
+     /* Lighter color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* About Section Styles */
+.about {
+    padding: 60px 20px; /* Padding for the section */
+    background-color: #1a1a1a; /* Dark background for about section */
+    color: #e0e0e0; /* Light grey text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    text-align: center; /* Center text */
+}
+
+.about h2 {
+    font-size: 40px; /* Larger font for section heading */
+    margin-bottom: 20px; /* Space below heading */
+    position: relative; /* For pseudo-element */
+}
+
+.about h2::after {
+    content: ''; /* Create a line below the heading */
+    display: block;
+    width: 60px; /* Width of the line */
+    height: 4px; /* Height of the line */
+    background-color: #ffcc00; /* Line color */
+    margin: 10px auto; /* Center the line */
+    border-radius: 2px; /* Rounded ends */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.about h2:hover::after {
+    width: 100px; /* Increase line width on hover */
+}
+
+.about-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    gap: 30px; /* Space between items */
+    margin-top: 30px; /* Space above content */
+}
+
+.profile-image {
+    flex: 1; /* Take up 1 part of the flex space */
+    max-width: 250px; /* Limit image width */
+}
+
+.profile-image img {
+    width: 100%; /* Make image responsive */
+    border-radius: 50%; /* Circular image */
+    border: 5px solid #ffcc00; /* Border for image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-image img:hover {
+    transform: scale(1.1); /* Scale image on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow effect on hover */
+}
+
+.about-description {
+    flex: 2; /* Take up 2 parts of the flex space */
+    line-height: 1.6; /* Improve line spacing for readability */
+    text-align: left; /* Left-align text */
+    padding: 0 20px; /* Padding for description */
+}
+
+.about-description p {
+    margin-bottom: 20px; /* Space between paragraphs */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.about-description p:hover {
+    color: #ffcc00; /* Change text color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    transition: transform 0.2s ease; /* Smooth transition */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack items on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+    
+    .profile-image {
+        margin-bottom: 20px; /* Space below image */
+    }
+}/* Skills Section */
+.skills {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffcc00;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-bar {
+    width: 80%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.skill-bar:hover {
+    transform: translateY(-3px);
+}
+
+.skill-name {
+    padding: 10px;
+    font-size: 18px;
+    text-align: left;
+    color: #fff;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Circular Progress */
+.circular-progress {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Spacing between skill name and circular progress */
+}
+
+.progress-ring {
+    transform: rotate(-90deg); /* Rotate the circle to start from the top */
+}
+
+.progress-ring__circle {
+    transition: stroke-dasharray 0.5s ease-in-out; /* Smooth transition for the progress change */
+}
+
+.percentage {
+    position: absolute;
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: #ffcc00; /* Change to match your design */
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #ffcc00;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #e0b829;
+}
+
+.pagination span {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-content button {
+    background-color: #ffcc00;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #e0b829;
+}
+
+/* Spinner for loading */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ffcc00;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
