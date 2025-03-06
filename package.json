@@ -6,24 +6,30 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "@tsparticles/react": "^3.0.0",
     "bootstrap": "^5.3.3",
+    "framer-motion": "^12.4.7",
+    "node": "^18.20.7",
+    "particles.js": "^2.0.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "react-type-animation": "^3.2.0",
     "resolve-url-loader": "^5.0.0",
+    "tsparticles": "^3.8.1",
     "web-vitals": "^4.2.3"
   },
   "scripts": {
-    "homepage": "https://RichaJaishwal0.github.io/RichaJaishwal_react_port.",
+    "homepage": "https://RichaJaishwal0.github.io/React.port",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
-
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
