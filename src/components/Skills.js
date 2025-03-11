@@ -1,71 +1,32 @@
 import React, { useState } from "react";
-// import './Skills.css'; // Make sure to include your CSS file
-
-const skills = [
+import '../styles.css'; 
+const skillData = [
   {
-    name: "Python",
-    level: 90,
-    description:
-      "Expert in Python development, including libraries like NumPy, Pandas, and Flask.",
+    title: "Languages",
+    content: "Python, C, DSA in C++, Pandas, Numpy, Matplotlib, MYSQL, MongoDB, HTML, CSS, JS, React, Tailwind CSS, Bootstrap"
   },
   {
-    name: "Java",
-    level: 80,
-    description: "Proficient in building applications with Java.",
+    title: "Tools",
+    content: "Git, GitHub, Visual Studio Code, Jupyter Notebook, Google Colab"
   },
   {
-    name: "JavaScript",
-    level: 70,
-    description: "Skilled in JavaScript frameworks such as React and Node.js.",
-  },
-  {
-    name: "HTML/CSS",
-    level: 90,
-    description:
-      "Experienced in creating responsive and interactive designs using HTML5 and CSS3.",
-  },
-  {
-    name: "C",
-    level: 75,
-    description:
-      "Proficient in developing web applications with React and Redux.",
-  },
-  {
-    name: "Database/MySQL",
-    level: 70,
-    description:
-      "Good understanding of backend development with MySQL and Firebase.",
-  },
+    title: "AI and ML",
+    content: "Proficient in Python-based ML libraries for supervised and unsupervised learning"
+  }
 ];
+const SkillCards = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Skills = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [skillsPerPage] = useState(3);
-  const [selectedSkill, setSelectedSkill] = useState(null);
-
-  const indexOfLastSkill = currentPage * skillsPerPage;
-  const indexOfFirstSkill = indexOfLastSkill - skillsPerPage;
-  const currentSkills = skills.slice(indexOfFirstSkill, indexOfLastSkill);
-
-  const handleSkillClick = (skill) => {
-    setSelectedSkill(skill);
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % skillData.length);
   };
 
-  const handleCloseModal = () => {
-    setSelectedSkill(null);
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? skillData.length - 1 : prevIndex - 1
+    );
   };
 
-  const handleNextPage = () => {
-    if (currentPage < Math.ceil(skills.length / skillsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
 
   return (
     <section id="skills" className="skills">
@@ -84,44 +45,26 @@ const Skills = () => {
           utilizes any of the following competencies and increase my mastery in
           any of these skills if needed.
         </div>
-        <div className="Cards">
-          <div className="Card">
-            <div className="heading">
-              <h2>Languages</h2>
-            </div>
-            <div className="Skill-content">
-              <p>
-                Python,C,DSA in C++,Pandas,Numpy,Matplotlib,
-                <br />
-                MYSQL,MongoDB,HTML,CSS,JS,React,Tailwind CSS, Bootstrap
-              </p>
-            </div>
-          </div>
-          <div className="Card">
-            <div className="heading">
-              <h2>Tools</h2>
-            </div>
-            <div className="Skill-content">
-              <p>
-                Git, GitHub, Visual Studio Code, Jupyter Notebook, Google Colab
-                <br />
-              </p>
-            </div>
-          </div>
-
-          <div className="Card">
-            <div className="heading">
-              <h2>AI and ML</h2>
-            </div>
-            <div className="Skill-content">
-              <p>
-              Proficient in Python-based ML libraries for supervised and unsupervised learning
-                <br />
-              </p>
-            </div>
-            
-          </div>
+        <div className="Card-container">
+          <div className="card-button">
+      <div className="Card">
+        <div className="heading">
+          <h2>{skillData[currentIndex].title}</h2>
         </div>
+        <div className="Skill-content">
+          <p>{skillData[currentIndex].content}</p>
+        </div>
+        
+      </div>
+      <div className="buttons-prev-next">
+        <button className="prev" onClick={handlePrev}>⬅ Prev</button>
+        <button className="next" onClick={handleNext}>Next ➡</button>
+      </div>
+      </div>
+
+      
+    </div>
+            
       </div>
 
       {/* <div className="skills-list">
@@ -175,4 +118,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillCards;
