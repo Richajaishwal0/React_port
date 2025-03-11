@@ -1,5 +1,4 @@
 import React from "react";
-// Ensure the correct path for your CSS
 
 const About = () => {
   return (
