@@ -102,6 +102,9 @@ a:hover {
   max-width: 800px;
 }
 /* Skills section */
+section{
+padding-bottom:50px;
+}
 .skills .heading {
   height: 50px;
   width: 200px;
