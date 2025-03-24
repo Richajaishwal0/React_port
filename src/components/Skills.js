@@ -1,45 +1,17 @@
-import React, { useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "../styles.css";
 import "./skillbar.css";
 
-const skillData = [
-  {
-    title: "Languages",
-    content:
-      "Python, C, DSA in C++, Pandas, Numpy, Matplotlib, MySQL, MongoDB, HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap",
-  },
-  {
-    title: "Tools",
-    content: "Git, GitHub, Visual Studio Code, Jupyter Notebook, Google Colab",
-  },
-  {
-    title: "AI and ML",
-    content:
-      "Proficient in Python-based ML libraries for supervised and unsupervised learning",
-  },
-];
-
 const progressData = [
-  { skill: "Programming", percentage: 95 },
+  { skill: "Programming", percentage: 90 },
   { skill: "Database Management", percentage: 80 },
-  { skill: "Web Development", percentage: 70 },
-  { skill: "Machine Learning", percentage: 60 },
+  { skill: "Web Development", percentage: 85 },
+  { skill: "AI/ML", percentage: 75 },
 ];
 
 const SkillCards = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % skillData.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? skillData.length - 1 : prevIndex - 1
-    );
-  };
+  
 
   return (
     <section id="skills" className="skills">
@@ -55,37 +27,14 @@ const SkillCards = () => {
             confident in my ability to learn and adapt as needed.
           </p>
         </div>
-        <div className="Card-container">
-          <div className="card-button">
-            <div className="Card">
-              <div className="heading">
-                <h2>{skillData[currentIndex].title}</h2>
-              </div>
-              <div className="Skill-content">
-                <p>{skillData[currentIndex].content}</p>
-              </div>
-            </div>
-            <div className="buttons-prev-next">
-              <button className="prev" onClick={handlePrev}>
-                ⬅ Prev
-              </button>
-              <button className="next" onClick={handleNext}>
-                Next ➡
-              </button>
-            </div>
-          </div>
-        </div>
+
       </div>
 
-      {/* Circular Progress Bars */}
       <div className="circular_progress">
         <div className="responsive-container-block big-container">
           <div className="responsive-container-block container">
-            <p className="text-blk section-headtext">Skill Proficiency</p>
-            <p className="text-blk section-subheadtext">
-              A visual representation of my proficiency in different skill
-              areas.
-            </p>
+            
+          
             <div className="responsive-container-block">
               {progressData.map((skill, index) => (
                 <div

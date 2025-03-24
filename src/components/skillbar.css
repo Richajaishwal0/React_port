@@ -1,7 +1,10 @@
 .circular_progress * {
   font-family: Nunito, sans-serif;
 }
-
+.circular_progress {
+  position: relative;
+  bottom:230px;
+}
 .circular_progress .text-blk {
   margin-top: 0px;
   margin-right: 0px;
